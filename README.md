@@ -1,5 +1,3 @@
-# ECommerceLock
-
 # LOCK YAPISI
 
 Veritabanı sistemlerinde, birden fazla kullanıcının veya işlemin aynı anda aynı verilere erişmesi durumunda, veri tutarlılığı ve bütünlüğünü korumak için **lock** mekanizmaları kullanılır.
