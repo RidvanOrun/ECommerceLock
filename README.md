@@ -38,3 +38,15 @@ Ancak performans maliyeti yüksek olduğu için genellikle sadece çok kritik i�
 **Örnek Senaryo:**  
 Stok sayısı 1 olan bir ürünü Ali satın almak istediğinde sistem o ürünü kilitler. Bu sırada Ayşe de aynı ürünü almak isterse, Ali’nin işlemi bitene kadar bekler.
 Ali işlemini tamamlayınca kilit kalkar, stok güncellenir ve Ayşe’nin işlemi devam eder; ancak stok tükendiği için işlem başarısız olur.
+
+## 🧩 Race Condition, Lock ve Transaction İlişkisi
+
+**Race Condition**, derin bir konudur fakar basit olarak; birden fazla işlemin aynı anda aynı veriye erişmesi sonucu ortaya çıkan ve veri tutarsızlığına yol açan bir durumdur.  
+Örneğin, stokta yalnızca **bir ürün** kaldığında iki kullanıcının aynı anda satın alma işlemi başlatması, sistemin hatalı şekilde **iki satış** yapmasına neden olabilir.
+
+Bu tür durumlarda **Optimistic Lock** ve **Pessimistic Lock** yapıları, Race Condition’a karşı etkili çözüm mekanizmaları olarak kullanılabilir.  
+Lock yapıları, aynı veriye eşzamanlı erişimi kontrol ederek **veri bütünlüğünü (data integrity)** sağlar.
+
+Ayrıca **Transaction** yapısı da Race Condition riskini azaltmak için tercih edilir.  
+Transaction, bir işlem dizisinin **tamamının ya da hiçbirinin** uygulanmasını garanti eder.  
+Örneğin, stokta yeterli ürün yoksa transaction işlemi **iptal eder** ve veri bütünlüğünü korur.
